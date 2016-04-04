@@ -2,8 +2,9 @@
 #   Tools for interacting with the NetrunnerDB API.
 #
 # Commands:
-#   [card name] - search for a card with that name in the NetrunnerDB API (braces necessary)
+#   !card <card name> - search for a card with that name in the NetrunnerDB API
 #   !jank (corp|runner) - Choose an identity and three random cards. Break the meta!
+#   !find <search string> - Search NRDB cards using given criteria
 
 Fuse = require 'fuse.js'
 
@@ -301,7 +302,7 @@ module.exports = (robot) ->
 			unsortedCards = JSON.parse body
 			robot.brain.set 'cards', unsortedCards.sort(compareCards)
 
-	robot.hear /\[([^\]]+)\]/, (res) ->
+	robot.hear /!card\s(.+)/, (res) ->
 		query = res.match[1]
 		cards = robot.brain.get('cards')
 
