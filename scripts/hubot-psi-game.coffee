@@ -1,3 +1,9 @@
+# Description:
+#   Psi game playing module
+#
+# Commands:
+#   !psi <bid> - bet on a psi game
+
 module.exports = (robot) ->
 	robot.hear /^!psi (\d+)\s*$/i, (res) ->
 		bid = parseInt(res.match[1])

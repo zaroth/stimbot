@@ -30,7 +30,6 @@ You'll see some start up output and a prompt:
 Then you can interact with stimbot by typing `stimbot help`.
 
     stimbot> stimbot help
-    stimbot animate me <query> - The same thing as `image me`, except adds [snip]
     stimbot help - Displays all of the help commands that stimbot knows about.
     ...
 
